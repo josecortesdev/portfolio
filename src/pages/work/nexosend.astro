@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { nexosend, profile } from '../../data/portfolio';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Layout title="Nexosend — A project by José Cortés" description="Explore Nexosend, José Cortés’s SMS application for campaigns, scheduling, and message history.">
+  <header class="site-header wrap"><a class="wordmark" href={`${base}/`} aria-label="José Cortés home">jc<span>.</span></a><a class="text-link" href={`${base}/#work`}>← All work</a></header>
+  <main id="main" class="case-main wrap">
+    <p class="eyebrow">{nexosend.label}</p><h1 class="case-title">Nexosend<span>.</span></h1><p class="case-lead">{nexosend.title}</p>
+    <div class="case-meta">
+      <div><span>My role</span><strong>Design, development & deployment</strong></div>
+      <div><span>Focus</span><strong>SMS scheduling & processing</strong></div>
+      <div class="case-actions">
+        <a class="button button-dark" href={nexosend.demo} target="_blank" rel="noopener noreferrer">Watch the demo <span class="sr-only">(opens in a new tab)</span><span aria-hidden="true">↗</span></a>
+        <a class="text-link" href={nexosend.apiDocs} target="_blank" rel="noopener noreferrer">Read the API docs <span class="sr-only">(opens in a new tab)</span><span aria-hidden="true">↗</span></a>
+        <a class="text-link" href={nexosend.url}>Try Nexosend ↗</a>
+      </div>
+    </div>
+    <div class="case-body"><aside><p class="eyebrow">The project</p><a href="#context">01 / Context</a><a href="#contribution">02 / My contribution</a><a href="#engineering">03 / API & testing</a></aside><div>
+      <section id="context"><p class="eyebrow">01 / Context</p><h2>Scheduling a campaign</h2><p>{nexosend.context}</p>
+        <figure class="case-figure">
+          <img class="case-screen" src={`${base}/nexosend-scheduling.png`} width="1166" height="765" loading="lazy" alt="Nexosend SMS form with a message, chart link, recipient, and scheduled sending time" />
+          <figcaption>Selecting a chart adds a public link to the SMS so recipients can open it on their phone.</figcaption>
+        </figure>
+      </section>
+      <section id="contribution"><h2>My contribution</h2><p>{nexosend.contribution}</p><p>In the message history, <code>sent</code> means the provider accepted the SMS. Confirmation that it reached the phone would require a separate delivery receipt.</p></section>
+      <section id="engineering">
+        <h2>API access and automated checks</h2>
+        <p>I used Laravel Sanctum for API authentication. After verifying their email, users can issue and revoke tokens from the web app. The OpenAPI documentation includes example requests and responses in Swagger UI.</p>
+        <h3>What runs on every pull request</h3>
+        <p>GitHub Actions runs the Laravel feature tests against MySQL with PHPUnit and builds the Vue frontend.</p>
+      </section>
+    </div></div>
+    <div class="case-contact"><h2>Want to talk about the project?</h2><a class="text-link" href={`mailto:${profile.email}?subject=Nexosend%20project`}>Let’s talk ↗</a></div>
+  </main><footer class="site-footer wrap"><span>José Cortés / Selected work</span><a href={`${base}/`}>← Back to portfolio</a></footer>
+</Layout>

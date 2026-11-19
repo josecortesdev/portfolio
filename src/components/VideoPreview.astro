@@ -1,0 +1,40 @@
+---
+interface Props { videoId: string; title: string; label: string }
+const { videoId, title, label } = Astro.props;
+---
+<div class="video-preview" data-video-id={videoId} data-title={title}>
+  <a href={`https://www.youtube.com/watch?v=${videoId}`}>
+    <img src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} loading="lazy" alt="" width="480" height="360" />
+    <span><b aria-hidden="true">▶</b> {label}</span>
+  </a>
+</div>
+
+<script>
+  for (const preview of document.querySelectorAll<HTMLElement>('.video-preview')) {
+    const link = preview.querySelector('a')!;
+    link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const player = document.createElement('iframe');
+      player.title = preview.dataset.title!;
+      player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      player.allowFullscreen = true;
+      player.referrerPolicy = 'strict-origin-when-cross-origin';
+      player.src = `https://www.youtube-nocookie.com/embed/${preview.dataset.videoId}?autoplay=1`;
+      preview.replaceChildren(player);
+      player.focus();
+    });
+    preview.closest('details')?.addEventListener('toggle', event => {
+      if (!(event.currentTarget as HTMLDetailsElement).open) preview.replaceChildren(link);
+    });
+  }
+</script>
+
+<style>
+  .video-preview { aspect-ratio:16/9; background:#20211e; margin-bottom:20px }
+  a, img, .video-preview :global(iframe) { display:block; width:100%; height:100%; border:0 }
+  a { position:relative }
+  img { object-fit:cover }
+  span { position:absolute; inset:auto auto 12px 12px; padding:8px 12px; background:#20211e; color:white; font-size:14px }
+  b { margin-right:6px }
+</style>
