@@ -5,7 +5,7 @@ export const profile = {
   email: 'josecortesdev@gmail.com',
   github: 'https://github.com/josecortesdev',
   linkedin: 'https://www.linkedin.com/in/josecortesdev/',
-  resume: 'jose-cortes-cv.pdf',
+  resume: 'Jose-Cortes-Becerra-PHP-Laravel-Developer.pdf',
   availability: 'Available for remote contracts',
   intro: 'I have 4+ years of professional experience building web applications. I designed, built, tested, and deployed Nexosend, an SMS platform with its own API.',
   currentWork: 'I automate Excel reports and charts from database records and add features to internal applications, including file organization and printable records.',

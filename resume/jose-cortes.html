@@ -8,14 +8,16 @@
   * { box-sizing: border-box }
   body { max-width: 7.02in; margin: 0 auto; font: 11.5pt/1.36 Arial, sans-serif; color: #222825 }
   h1, h2, h3, p { margin: 0 }
-  h1 { font-size: 29pt; line-height: 1.12; letter-spacing: -1pt }
+  h1 { font-size: 26pt; line-height: 1.12; letter-spacing: -1pt }
   .role { color: #893923; font-size: 16pt; font-weight: bold; margin: 2pt 0 5pt }
+  .portfolio { margin: 8pt 0 3pt }
   a { color: #763720; text-underline-offset: 2px }
   .summary { margin-top: 8pt }
   h2 { font-size: 14pt; margin: 13pt 0 5pt; border-bottom: 1px solid #b6b9b4; padding-bottom: 2pt }
   h3 { font-size: 11.4pt; margin: 6pt 0 1pt }
   .links { font-size: 10pt; margin-top: 2pt }
   article { break-inside: avoid }
+  ul { margin: 2pt 0 0; padding-left: 14pt }
   .experience h3 { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt }
   .experience h3 span { font-size: 10.5pt; font-weight: normal; white-space: nowrap }
   .experience article + article h3 { margin-top: 10pt }
@@ -25,26 +27,47 @@
 <header>
   <h1>José Cortés Becerra</h1>
   <p class="role">PHP / Laravel Developer</p>
-  <p><a href="https://josecortesdev.com" target="_blank" rel="noopener noreferrer">josecortesdev.com</a></p>
+  <p class="portfolio"><strong>Portfolio:</strong> <a href="https://josecortesdev.com" target="_blank" rel="noopener noreferrer">josecortesdev.com</a></p>
   <p><a href="mailto:josecortesdev@gmail.com" target="_blank" rel="noopener noreferrer">josecortesdev@gmail.com</a> · <a href="https://www.linkedin.com/in/josecortesdev/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/josecortesdev" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-  <p class="summary">4+ years of professional experience building web applications. Designed and deployed Nexosend, an SMS platform with a Laravel API and a Vue interface. Fluent in English and open to remote contracts.</p>
+  <p class="summary">4+ years building PHP and Laravel applications. Built and deployed Nexosend, an SMS platform with a REST API. Fluent in English and available for remote contracts.</p>
 </header>
 <section class="experience">
   <h2>Professional experience</h2>
-  <article><h3>Analyst Developer · Tragsatec <span>Oct 2024 – Present</span></h3>
-  <p>Automate Excel reports and charts from database records and add features to internal applications, including file organization and printable records.</p></article>
-  <article><h3>Senior Developer · Visual Data Intelligence <span>Oct 2023 – Oct 2024</span></h3>
-  <p>Developed software for golf courses and clinics. Built a QR code system that golfers use to enter designated areas and a CRM dashboard that lets staff track campaign performance.</p></article>
-  <article><h3>Junior Developer · Adalid Internet SL <span>Dec 2021 – Oct 2023</span></h3>
-  <p>Developed backend features for two publishing platforms, one in PHP and one in Laravel. Implemented advertising features for digital publications and wrote PHPUnit tests.</p></article>
+  <article>
+    <h3>Analyst Developer · Tragsatec <span>Oct 2024 – Present</span></h3>
+    <ul>
+      <li>Built an internal dashboard in PHP and Laravel to chart data from the existing database.</li>
+      <li>Automated Excel reports and added printable records to internal applications.</li>
+    </ul>
+  </article>
+  <article>
+    <h3>Senior Developer · Visual Data Intelligence <span>Oct 2023 – Oct 2024</span></h3>
+    <ul>
+      <li>Built Laravel applications for clinics and golf courses and contributed to the Vue frontend.</li>
+      <li>Built a QR code access system for golfers, fixed CRM issues, and created a dashboard for tracking campaign performance.</li>
+    </ul>
+  </article>
+  <article>
+    <h3>Junior Developer · Adalid Internet SL <span>Dec 2021 – Oct 2023</span></h3>
+    <ul>
+      <li>Built backend features, including ad support, for two PHP and Laravel publishing platforms.</li>
+      <li>Worked with a senior developer to protect against SQL injection.</li>
+    </ul>
+  </article>
 </section>
 <section>
   <h2>Selected projects</h2>
   <article><h3>Nexosend · SMS scheduling and REST API</h3>
-  <p>Built and tested a messaging platform that tracks bulk sends per recipient. Each recipient has a separate queued job and status record. On pull requests, GitHub Actions runs Laravel tests against MySQL and builds the Vue frontend.</p>
+  <ul>
+    <li>Bulk sends use one queued job per recipient to track each SMS individually.</li>
+    <li>GitHub Actions runs PHPUnit against MySQL and builds the Vue app on each pull request.</li>
+  </ul>
   <p class="links"><a href="https://nexosend.com" target="_blank" rel="noopener noreferrer">Live application</a> · <a href="https://nexosend.com/api-docs" target="_blank" rel="noopener noreferrer">API documentation</a> · <a href="https://github.com/josecortesdev/nexosend-showcase#product-demo" target="_blank" rel="noopener noreferrer">Product demo</a></p></article>
   <article><h3>Mykelt · Client e-commerce project · 2021</h3>
-  <p>Connected an Angular shopping cart to a Laravel REST API and integrated Stripe payments with Laravel Cashier. Built a CMS so the client could publish and edit articles.</p>
+  <ul>
+    <li>Connected an Angular cart to a Laravel REST API and integrated Stripe via Laravel Cashier.</li>
+    <li>Built a CMS where the client could upload images and publish articles.</li>
+  </ul>
   <p class="links"><a href="https://github.com/josecortesdev/BackMykelt" target="_blank" rel="noopener noreferrer">Backend source</a> · <a href="https://josecortesdev.github.io/portafolio/assets/videos/tecnico2.mp4" target="_blank" rel="noopener noreferrer">Checkout walkthrough</a></p></article>
 </section>
 <section>

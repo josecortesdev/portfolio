@@ -37,7 +37,7 @@ npm run check:output
 - **SEO:** `src/layouts/Layout.astro`.
 - **Archivos descargables:** `public/`.
 
-Los campos `linkedin` y `resume` están vacíos y se ocultan. Para añadir el CV, guarda el PDF en `public/jose-cortes-cv.pdf` y escribe `jose-cortes-cv.pdf` en `profile.resume`.
+Para actualizar el CV, sustituye `public/Jose-Cortes-Becerra-PHP-Laravel-Developer.pdf`. Si cambias el nombre del archivo, actualiza también `profile.resume`.
 
 ## Antes de enviar candidaturas
 
