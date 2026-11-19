@@ -8,9 +8,9 @@ export const profile = {
   resume: 'Jose-Cortes-Becerra-PHP-Laravel-Developer.pdf',
   availability: 'Available for remote contracts',
   intro: 'I have 4+ years of professional experience building web applications. I designed, built, tested, and deployed Nexosend, an SMS platform with its own API.',
-  currentWork: 'I automate Excel reports and charts from database records and add features to internal applications, including file organization and printable records.',
+  currentWork: 'I built a Laravel dashboard so staff could review charts based on their database records. I automated their Excel reports and added tools for organizing files and printing records.',
   previousWork: 'I developed business software for golf courses and clinics, working across CRM and business intelligence tools. For example, I built a QR code system that golfers use to enter designated areas and a CRM dashboard that lets staff track campaign performance.',
-  firstWork: 'I started my professional programming career at Adalid, a company that develops a CMS for digital publications.',
+  firstWork: 'I developed backend features for two publishing platforms, one in PHP and one in Laravel. I added support for displaying ads in digital publications and worked with a senior developer to protect against SQL injection.',
 };
 
 export const nexosend = {
